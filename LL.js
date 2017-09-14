@@ -53,7 +53,6 @@ class LL {
 			this.head = this.head.next
 			this.head.previous = null
 		}
-
 		return this
 	}
 
@@ -61,6 +60,14 @@ class LL {
 		if (!this.tail) {
 			return 'no node'
 		}
+		if (!this.tail.previous) {
+			this.head = this.tail = null
+			return 'Node Removed! Empty List!'
+		} else {
+			this.tail = this.tail.previous
+			this.tail.next = null
+		}
+		return this
 	}
 
 	traverseFromHead() {
@@ -83,12 +90,12 @@ class LL {
 			pointer = pointer.previous
 		}
 		return printArray
-  }
+	}
 
-  //removeValue(val){
-    //if(!this.head) return 'No list'
+	//removeValue(val){
+	//if(!this.head) return 'No list'
 
-  //}
+	//}
 }
 
 let cool = new LL()
@@ -96,16 +103,27 @@ let cool = new LL()
 	.insert(2)
 	.insert(1)
 	.insert('hello')
-	.removeFromHead()
 
-let test1 = new LL().removeFromHead();
+let cool1 = new LL()
+	.insert(1)
+	.insert('leftover')
+	.insert(1)
+
+let coolAfter = new LL()
+	.insert(1)
+	.insert('leftover')
+	.insert(1)
+	.removeFromHead()
+	.removeFromTail()
+let test1 = new LL()
+	.removeFromHead();
 let test2 = new LL()
 	.insert(1)
 	.removeFromHead()
 
-console.log(cool)
-console.log(test1, '\n', test2)
+console.log('This is a doubly linked list!!====== \n\n', cool, '\n\n')
+console.log('Remove from Head and Tail!====== \n\n', cool1,  '\n\n', coolAfter, '\n\n')
+console.log('Error checking!!=======\n\n', test1, '\n', test2, '\n\n')
 
-console.log(cool.traverseFromHead())
-console.log(cool.traverseFromTail())
-
+console.log('Print out values starting from the head!!========\n\n', cool.traverseFromHead(), '\n\n')
+console.log('Print out values from the tail too!!========\n\n', cool.traverseFromTail(), '\n\n')
