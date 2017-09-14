@@ -114,9 +114,11 @@ let coolAfter = new LL()
 	.insert('leftover')
 	.insert(1)
 	.removeFromHead()
-	.removeFromTail()
+  .removeFromTail()
+
 let test1 = new LL()
-	.removeFromHead();
+  .removeFromHead();
+
 let test2 = new LL()
 	.insert(1)
 	.removeFromHead()
