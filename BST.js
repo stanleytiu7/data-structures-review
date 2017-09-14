@@ -75,7 +75,7 @@ class BST {
 		//check if there's anything before doing anything
 		if (!this.val) return 'no tree'
 		let printArray = [];
-		let queue = [this];
+    let queue = [this];
 		while (queue.length) {
 			let pointer = queue.shift()
 			printArray.push(pointer.val)

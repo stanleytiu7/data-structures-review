@@ -32,7 +32,9 @@ class LL {
 					}
 					this.tail = pointer.next
 					pointer = null;
-				} else {pointer = pointer.next}
+				} else {
+					pointer = pointer.next
+				}
 			}
 		}
 		return this
