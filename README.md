@@ -4,8 +4,8 @@ Studying implementations of data structures in javascript for interviews and the
 # Data Structures
 ## Work-in-progress:
 Doubly-linked list
-  *Insert
-  *Remove
+  ..*Insert
+  ..*Remove
 Binary Search Tree
   *Insert
   *Breadth First Search
