@@ -3,19 +3,19 @@ Studying implementations of data structures in javascript for interviews and the
 
 # Data Structures
 ## Work-in-progress:
-Doubly-linked list
-  ..*Insert
-  ..*Remove
-Binary Search Tree
-  *Insert
-  *Breadth First Search
-  *Depth First Search
-    *Pre-order
-    *In-order
-    *Post-order
+* Doubly-linked list
+  * Insert
+  * Remove
+* Binary Search Tree
+  * Insert
+  * Breadth First Search
+  * Depth First Search
+    * Pre-order
+    * In-order
+    * Post-order
 ## To be implemented:
-*Queues
-*Stacks
-*Hash map
-*Trie
-*Heaps
+* Queues
+* Stacks
+* Hash map
+* Trie
+* Heaps
