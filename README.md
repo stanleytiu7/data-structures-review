@@ -1,4 +1,4 @@
-# data-structures-review
+# Data-Structures-Review
 Studying implementations of data structures in javascript for interviews and the like, feel free to point out where I did something wrong or if there are better implementations
 
 # Work-in-progress:
