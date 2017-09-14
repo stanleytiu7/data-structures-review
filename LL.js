@@ -3,6 +3,7 @@ class LL {
 		this.head = null
 		this.tail = null
 	}
+
 	insert(val) {
 		//insert into null case
 		if (!this.head) {
@@ -40,11 +41,71 @@ class LL {
 		return this
 	}
 
+	removeFromHead() {
+		if (!this.head) {
+			return 'Error: No node to remove!'
+		}
+		if (!this.head.next) {
+			this.head = null
+			this.tail = null
+			return 'Node Removed! Empty List!'
+		} else {
+			this.head = this.head.next
+			this.head.previous = null
+		}
+
+		return this
+	}
+
+	removeFromTail() {
+		if (!this.tail) {
+			return 'no node'
+		}
+	}
+
+	traverseFromHead() {
+		if (!this.head) return 'Nothing to print'
+		let printArray = [this.head.val]
+		let pointer = this.head.next
+		while (pointer) {
+			if (pointer) printArray.push(pointer.val)
+			pointer = pointer.next
+		}
+		return printArray
+	}
+
+	traverseFromTail() {
+		if (!this.tail) return 'Nothing to print'
+		let printArray = [this.tail.val]
+		let pointer = this.tail.previous
+		while (pointer) {
+			if (pointer) printArray.push(pointer.val)
+			pointer = pointer.previous
+		}
+		return printArray
+  }
+
+  //removeValue(val){
+    //if(!this.head) return 'No list'
+
+  //}
 }
 
 let cool = new LL()
 	.insert(1)
 	.insert(2)
 	.insert(1)
+	.insert('hello')
+	.removeFromHead()
 
-console.dir(cool)
+let test1 = new LL().removeFromHead();
+let test2 = new LL()
+	.insert(1)
+	.removeFromHead()
+
+console.log(cool)
+console.log(test1, '\n', test2)
+
+console.log(cool.traverseFromHead())
+console.log(cool.traverseFromTail())
+
