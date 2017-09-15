@@ -82,25 +82,28 @@ class BST {
 			if (pointer.left) queue.push(pointer.left)
 			if (pointer.right) queue.push(pointer.right)
 		}
-    console.log(printArray)
+    return printArray
 	}
 
 	preOrder() {
 		console.log(this.val)
 		if (this.left) this.preOrder.call(this.left)
     if (this.right) this.preOrder.call(this.right)
+    return null
 	}
 
 	inOrder() {
 		if (this.left) this.inOrder.call(this.left)
 		console.log(this.val)
     if (this.right) this.inOrder.call(this.right)
+    return null
 	}
 
   postOrder() {
 		if (this.left) this.postOrder.call(this.left)
     if (this.right) this.postOrder.call(this.right)
     console.log(this.val)
+    return null
   }
 }
 
@@ -115,7 +118,7 @@ let tree = new BST(5)
 let contains = 5;
 console.log('This is the tree: \n\n', tree, '\n')
 console.log(`Does it contain ${contains}?\n\n`, tree.contains(contains), '\n')
-console.log('BFS done \n\n', tree.breadFirstSearch())
+console.log('BFS: \n\n', tree.breadFirstSearch(), '\n\n')
 console.log('DFS Pre-order done \n\n', tree.preOrder())
 console.log('DFS In-order done \n\n', tree.inOrder())
 console.log('DFS Post-order done \n\n', tree.postOrder())

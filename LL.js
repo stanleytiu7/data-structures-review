@@ -92,10 +92,32 @@ class LL {
 		return printArray
 	}
 
-	//removeValue(val){
-	//if(!this.head) return 'No list'
+	removeValue(val) {
+		if (!this.head) {
+			return 'No list'
+		} else if (val === this.head.val) {
+			this.removeFromHead();
+			return 'removed head'
+		} else {
+			let pointer = this.head;
+			while (pointer.next) {
+				if (val === pointer.next.val) {
+					if (pointer.next.next) {
+						pointer.next = pointer.next.next
+						pointer.next.previous = pointer
+						return this;
+					} else {
+						pointer.next = null
 
-	//}
+						this.tail = pointer
+						return this;
+					}
+				} else {
+					pointer = pointer.next
+				}
+			}
+		}
+	}
 }
 
 let cool = new LL()
@@ -114,18 +136,24 @@ let coolAfter = new LL()
 	.insert('leftover')
 	.insert(1)
 	.removeFromHead()
-  .removeFromTail()
+	.removeFromTail()
 
 let test1 = new LL()
-  .removeFromHead();
+	.removeFromHead();
 
 let test2 = new LL()
 	.insert(1)
 	.removeFromHead()
 
 console.log('This is a doubly linked list!!====== \n\n', cool, '\n\n')
-console.log('Remove from Head and Tail!====== \n\n', cool1,  '\n\n', coolAfter, '\n\n')
+console.log('Remove from Head and Tail!====== \n\n', cool1, '\n\n', coolAfter, '\n\n')
 console.log('Error checking!!=======\n\n', test1, '\n', test2, '\n\n')
 
 console.log('Print out values starting from the head!!========\n\n', cool.traverseFromHead(), '\n\n')
 console.log('Print out values from the tail too!!========\n\n', cool.traverseFromTail(), '\n\n')
+
+console.log('Remove specified value!!========\n')
+console.log('Before removal: \n\n', cool, '\n')
+console.log('removing hello!!\n\n', cool.removeValue('hello'), '\n')
+console.log('removing 2!!\n')
+console.log(cool.removeValue(2))
