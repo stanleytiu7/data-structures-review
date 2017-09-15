@@ -1,8 +1,9 @@
 # Data-Structures-Review
-Studying implementations of data structures in javascript for interviews and the like, feel free to point out where I did something wrong or if there are better implementations
+Studying implementations of data structures in javascript for interviews and the like
 
-# Data Structures
-## Work-in-progress:
+## Data Structures
+Feel free to point out where I did something wrong or if there are better implementations. This is in no way comprehensive, and there are many ways to implement the different types of data structures. I'm partial to getting my hands dirty and it helps me remember them the best, so here I go.
+### Work-in-progress:
 * Doubly-linked list
   * Insert
   * Remove
@@ -13,7 +14,7 @@ Studying implementations of data structures in javascript for interviews and the
     * Pre-order
     * In-order
     * Post-order
-## To be implemented:
+### To be implemented:
 * Queues
 * Stacks
 * Hash map
