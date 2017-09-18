@@ -75,36 +75,51 @@ class BST {
 		//check if there's anything before doing anything
 		if (!this.val) return 'no tree'
 		let printArray = [];
-    let queue = [this];
+		let queue = [this];
 		while (queue.length) {
 			let pointer = queue.shift()
 			printArray.push(pointer.val)
 			if (pointer.left) queue.push(pointer.left)
 			if (pointer.right) queue.push(pointer.right)
 		}
-    return printArray
+		return printArray
 	}
 
 	preOrder() {
 		console.log(this.val)
 		if (this.left) this.preOrder.call(this.left)
-    if (this.right) this.preOrder.call(this.right)
-    return null
+		if (this.right) this.preOrder.call(this.right)
+		return null
 	}
 
 	inOrder() {
 		if (this.left) this.inOrder.call(this.left)
 		console.log(this.val)
-    if (this.right) this.inOrder.call(this.right)
-    return null
+		if (this.right) this.inOrder.call(this.right)
+		return null
 	}
 
-  postOrder() {
+	postOrder() {
 		if (this.left) this.postOrder.call(this.left)
-    if (this.right) this.postOrder.call(this.right)
-    console.log(this.val)
-    return null
-  }
+		if (this.right) this.postOrder.call(this.right)
+		console.log(this.val)
+		return null
+	}
+}
+
+
+function traverse(tree1, tree2) {
+	tree1.val = tree1.val + tree2.val || tree1.val
+	if (tree2.left) {
+		if (!tree1.left) tree1.left = new BST(null, null, null)
+		traverse(tree1.left, tree2.left)
+	}
+	if (tree2.right) {
+		if (!tree1.right) tree1.right = new BST(null, null, null)
+		traverse(tree1.right, tree2.right)
+	}
+	console.log(tree1)
+	return tree1
 }
 
 let tree = new BST(5)
@@ -115,6 +130,18 @@ let tree = new BST(5)
 	.insert(7)
 	.insert(5.5)
 
+let tree1 = new BST(3)
+	.insert(2)
+	.insert(1)
+	.insert(4)
+	.insert(5)
+let tree2 = new BST(4)
+	.insert(2)
+	.insert(3)
+	.insert(7)
+	.insert(6)
+
+console.log('this is traverse===========\n\n\n\n', traverse(tree1, tree2))
 let contains = 5;
 console.log('This is the tree: \n\n', tree, '\n')
 console.log(`Does it contain ${contains}?\n\n`, tree.contains(contains), '\n')
